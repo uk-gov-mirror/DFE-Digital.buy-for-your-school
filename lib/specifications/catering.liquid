@@ -1,0 +1,45 @@
+<section id="blocks">
+  <!-- Show a block -->
+  {% if answer_55G5kpCLLL3h5yBQLiVlYy %}
+    <article>
+      <p class="govuk-body">I'm the first article and should be seen</p>
+    </article>
+  {% endif %}
+
+  <!-- Hide a block -->
+  {% if foo %}
+    <article>
+      <p class="govuk-body">I'm the second article and should NOT be seen</p>
+    </article>
+  {% endif %}
+
+  <!-- Inject an answer into a block -->
+  {% if answer_QvmpHjUCDyx0EofNDn9hX %}
+    <h2 class="govuk-heading-l">Our level of expertise</h2>
+    <article>
+      <p class="govuk-body">You selected '{{answer_QvmpHjUCDyx0EofNDn9hX}}' as your level of expertise.</p>
+    </article>
+  {% endif %}
+
+  <!-- Inject multiple answers into a block -->
+  {% if answer_1DqhwF2XkJJ0Um6NSweWlZ %}
+    <h2 class="govuk-heading-l">Services</h2>
+    {% if answer_1DqhwF2XkJJ0Um6NSweWlZ contains "breakfast"%}
+      <article>
+        <p class="govuk-body">You selected breakfast, here's more about what this means…</p>
+      </article>
+    {% endif %}
+
+    {% if answer_1DqhwF2XkJJ0Um6NSweWlZ contains "lunch"%}
+      <article>
+        <p class="govuk-body">You selected lunch, here's more about what this means…</p>
+      </article>
+    {% endif %}
+
+    {% if answer_1DqhwF2XkJJ0Um6NSweWlZ contains "dinner"%}
+      <article>
+        <p class="govuk-body">You selected dinner, here's more about what this means…</p>
+      </article>
+    {% endif %}
+  {% endif %}
+</section>
