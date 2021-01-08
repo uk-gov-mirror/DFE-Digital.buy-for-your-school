@@ -10,5 +10,9 @@
 </dl>
 
 <h1 class="govuk-heading-xl">Your specification</h1>
-<button class="govuk-button">Download (.odt)</button>
+
+<%= link_to "Download (.docx)", journey_path(@journey, format: :docx), class: "govuk-button" %>
+<%= link_to "Download (.odt)", journey_path(@journey, format: :odt), class: "govuk-button" %>
+<%= link_to "Download (.pdf)", journey_path(@journey, format: :pdf), class: "govuk-button" %>
+
 <%= @template.render(@answers).html_safe %>

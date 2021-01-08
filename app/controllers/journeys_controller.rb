@@ -20,6 +20,19 @@ class JourneysController < ApplicationController
     @template = Liquid::Template.parse(
       source, error_mode: :strict
     ) # Parses and compiles the template
+
+    respond_to do |format|
+      format.html
+      format.docx do
+        render docx: "specification.docx", content: @template.render(@answers)
+      end
+      format.pdf do
+        send_data WickedPdf.new.pdf_from_string(@template.render(@answers)), filename: "specfification.pdf"
+      end
+      format.odt do
+        send_data Html2Odt::Document.new(html: @template.render(@answers)).data, filename: "specfification.odt"
+      end
+    end
   end
 
   private
