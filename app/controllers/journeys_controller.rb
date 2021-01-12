@@ -19,6 +19,15 @@ class JourneysController < ApplicationController
     @specification_template = Liquid::Template.parse(
       @journey.liquid_template, error_mode: :strict
     )
+
+    specficiation_html = @specification_template.render(@answers)
+
+    respond_to do |format|
+      format.html
+      format.docx do
+        render docx: "specification.docx", content: specficiation_html, layout: "specficiation"
+      end
+    end
   end
 
   private
