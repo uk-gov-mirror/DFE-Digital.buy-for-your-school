@@ -3,9 +3,9 @@
 <h1 class="govuk-heading-xl"><%= @journey.category.capitalize %></h1>
 <dl class="govuk-summary-list">
   <% @steps.each do |step| %>
-    <% if step.question? %>
-      <%= render "#{step.contentful_type}_answer", step: step, answer: step.answer %>
-    <% end %>
+
+      <%= render "radios_answer", step: step, answer: step.answer %>
+    
   <% end %>
 </dl>
 

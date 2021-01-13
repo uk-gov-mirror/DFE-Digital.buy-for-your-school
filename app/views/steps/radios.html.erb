@@ -1,6 +1,7 @@
 <%= render layout: layout do |f| %>
   <%= f.hidden_field :response, value: nil %>
-  <% if @step.raw.fetch("fields", "extendedOptions", "options").present? %>
+  
+  <% if @step.raw.dig("fields", "extendedOptions", "options").present? %>
     <%= f.govuk_radio_buttons_fieldset(:response, legend: { size: 'm', text: @step.title }) do %>
       <% @step.raw["fields"]["extendedOptions"]["options"].each do |option| %>
         <%= f.govuk_radio_button :response, option["value"].downcase, label: { text: option["value"] } do %>

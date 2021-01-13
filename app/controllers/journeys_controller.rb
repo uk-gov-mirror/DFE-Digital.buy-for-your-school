@@ -16,7 +16,7 @@ class JourneysController < ApplicationController
     ).find(journey_id)
     @steps = @journey.steps.map { |step| StepPresenter.new(step) }
 
-    @answers = @journey.steps.that_are_questions.each_with_object({}) { |step, hash|
+    @answers = @journey.steps.each_with_object({}) { |step, hash|
       hash["answer_#{step.contentful_id}"] = step.answer.response.to_s
     }
 
