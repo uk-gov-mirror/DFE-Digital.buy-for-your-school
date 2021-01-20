@@ -7,14 +7,15 @@ class BuildJourneyOrder
 
   ENTRY_JOURNEY_MAX_LENGTH = 50
 
-  attr_accessor :entries, :starting_entry_id
+  attr_accessor :category_entry, :entries
 
-  def initialize(entries:, starting_entry_id:)
+  def initialize(category_entry:, entries: )
+    self.category_entry = category_entry
     self.entries = entries
-    self.starting_entry_id = starting_entry_id
   end
 
   def call
+    starting_entry_id = category_entry.starting_entry
     recursive_path(
       entry_lookup: entry_lookup_hash,
       next_entry_id: starting_entry_id,

@@ -35,7 +35,7 @@ RSpec.describe BuildJourneyOrder do
         expect {
           described_class.new(
             entries: fake_entries,
-            starting_entry_id: "fake-id"
+            category_entry_id: "fake-id"
           ).call
         }.to raise_error(BuildJourneyOrder::MissingEntryDetected)
       end
@@ -66,7 +66,7 @@ RSpec.describe BuildJourneyOrder do
         expect {
           described_class.new(
             entries: fake_entries,
-            starting_entry_id: "contentful-starting-step"
+            category_entry_id: "contentful-starting-step"
           ).call
         }.to raise_error(BuildJourneyOrder::RepeatEntryDetected)
       end
@@ -101,7 +101,7 @@ RSpec.describe BuildJourneyOrder do
         expect {
           described_class.new(
             entries: fake_entries,
-            starting_entry_id: "contentful-starting-step"
+            category_entry_id: "contentful-starting-step"
           ).call
         }.to raise_error(BuildJourneyOrder::TooManyChainedEntriesDetected)
       end

@@ -11,9 +11,12 @@ class JourneyMapsController < ApplicationController
 
   def new
     entries = GetAllContentfulEntries.new.call
+    category_entry = GetContentfulEntry.new(
+      entry_id: ENV["CONTENTFUL_DEFAULT_CATEGORY_ENTRY_ID"]
+    ).call
     @journey_map = BuildJourneyOrder.new(
       entries: entries.to_a,
-      starting_entry_id: ENV["CONTENTFUL_PLANNING_START_ENTRY_ID"]
+      category_entry: category_entry
     ).call
   end
 end

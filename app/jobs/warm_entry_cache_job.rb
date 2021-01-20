@@ -7,7 +7,7 @@ class WarmEntryCacheJob < ApplicationJob
   def perform
     entries = BuildJourneyOrder.new(
       entries: GetAllContentfulEntries.new.call,
-      starting_entry_id: ENV["CONTENTFUL_PLANNING_START_ENTRY_ID"]
+      category_entry_id: ENV["CONTENTFUL_PLANNING_START_ENTRY_ID"]
     ).call
 
     entries.each do |entry|
