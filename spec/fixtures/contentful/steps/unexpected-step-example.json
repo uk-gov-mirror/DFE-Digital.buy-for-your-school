@@ -1,0 +1,31 @@
+{
+    "sys": {
+        "space": {
+            "sys": {
+                "type": "Link",
+                "linkType": "Space",
+                "id": "rwl7tyzv9sys"
+            }
+        },
+        "id": "contentful-unexpected-step-type-category",
+        "type": "Entry",
+        "createdAt": "2020-12-09T11:53:52.744Z",
+        "updatedAt": "2020-12-09T11:53:52.744Z",
+        "environment": {
+            "sys": {
+                "id": "develop",
+                "type": "Link",
+                "linkType": "Environment"
+            }
+        },
+        "revision": 1,
+        "contentType": {
+            "sys": {
+                "type": "Link",
+                "linkType": "ContentType",
+                "id": "telepathy"
+            }
+        },
+        "locale": "en-US"
+    }
+}

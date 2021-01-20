@@ -9,13 +9,13 @@ class BuildJourneyOrder
 
   attr_accessor :category_entry, :entries
 
-  def initialize(category_entry:, entries: )
+  def initialize(category_entry:, entries:)
     self.category_entry = category_entry
     self.entries = entries
   end
 
   def call
-    starting_entry_id = category_entry.starting_entry
+    starting_entry_id = category_entry.starting_entry.id
     recursive_path(
       entry_lookup: entry_lookup_hash,
       next_entry_id: starting_entry_id,
