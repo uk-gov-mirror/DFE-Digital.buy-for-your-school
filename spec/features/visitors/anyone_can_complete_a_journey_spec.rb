@@ -274,21 +274,20 @@ feature "Anyone can start a journey" do
       #   fixture_filename: "categories/unexpected-step-example.json"
       # )
 
+      connector_double = instance_double(ContentfulConnector)
+      allow(ContentfulConnector).to receive(:new).and_return(connector_double)
+
       # Stub getting the category
-      contentful_connector = instance_double(ContentfulConnector)
-      expect(ContentfulConnector).to receive(:new)
-        .and_return(contentful_connector)
       contentful_response = fake_contentful_entry(contentful_fixture_filename: "categories/unexpected-step-example.json")
-      allow(contentful_connector).to receive(:get_entry_by_id)
+      allow(connector_double).to receive(:get_entry_by_id)
         .with("contentful-unexpected-step-type-category")
         .and_return(contentful_response)
 
       # Stub getting all steps
       raw_response = File.read("#{Rails.root}/spec/fixtures/contentful/path-with-unexpected-step-type.json")
-      contentful_connector = instance_double(ContentfulConnector)
+
       contentful_response = fake_contentful_entry_array(contentful_fixture_filename: "path-with-unexpected-step-type.json")
-      allow(contentful_connector).to receive(:get_all_entries)
-        .and_return(contentful_response)
+      allow(connector_double).to receive(:get_all_entries).and_return(contentful_response)
       allow(contentful_response).to receive(:raw)
         .and_return(raw_response)
 

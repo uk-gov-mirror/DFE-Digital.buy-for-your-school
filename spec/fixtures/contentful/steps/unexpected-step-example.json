@@ -1,31 +1,45 @@
 {
     "sys": {
-        "space": {
-            "sys": {
-                "type": "Link",
-                "linkType": "Space",
-                "id": "rwl7tyzv9sys"
-            }
-        },
-        "id": "contentful-unexpected-step-type-category",
-        "type": "Entry",
-        "createdAt": "2020-12-09T11:53:52.744Z",
-        "updatedAt": "2020-12-09T11:53:52.744Z",
-        "environment": {
-            "sys": {
-                "id": "develop",
-                "type": "Link",
-                "linkType": "Environment"
-            }
-        },
-        "revision": 1,
-        "contentType": {
-            "sys": {
-                "type": "Link",
-                "linkType": "ContentType",
-                "id": "telepathy"
-            }
-        },
-        "locale": "en-US"
-    }
+        "type": "Array"
+    },
+    "total": 1,
+    "skip": 0,
+    "limit": 100,
+    "items": [
+      {
+          "sys": {
+              "space": {
+                  "sys": {
+                      "type": "Link",
+                      "linkType": "Space",
+                      "id": "jspwts36h1os"
+                  }
+              },
+              "id": "contentful-unexpected-step-type",
+              "type": "Entry",
+              "createdAt": "2020-09-02T15:56:05.472Z",
+              "updatedAt": "2020-09-02T16:19:00.652Z",
+              "environment": {
+                  "sys": {
+                      "id": "master",
+                      "type": "Link",
+                      "linkType": "Environment"
+                  }
+              },
+              "revision": 2,
+              "contentType": {
+                  "sys": {
+                      "type": "Link",
+                      "linkType": "ContentType",
+                      "id": "question"
+                  }
+              },
+              "locale": "en-US"
+          },
+          "fields": {
+              "slug": "/check-your-answers",
+              "type": "telepathy"
+          }
+      }
+    ]
 }
