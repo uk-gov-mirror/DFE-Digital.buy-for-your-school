@@ -1,7 +1,7 @@
 class CreateSection
   attr_accessor :journey, :contentful_section
 
-  def initialize(journey:,contentful_section:)
+  def initialize(journey:, contentful_section:)
     @journey = journey
     @contentful_section = contentful_section
   end
