@@ -3,7 +3,8 @@ feature "Users can see the service banners" do
     visit root_path
 
     expect(page).to have_content(I18n.t("banner.beta.tag"))
-    expect(page).to have_content(I18n.t("banner.beta.message"))
+    expect(page).to have_content("This is a new service – your feedback will help us to improve it.")
+    expect(page).to have_link("feedback", href: "mailto:schools.digital@education.gov.uk")
   end
 
   context "when the app is configured as a Contenetful preview app" do
