@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog 1.0.0].
 - Add `noindex,nofollow` meta tag to all pages, as per Gov.UK guidance
 - fix API auth by switching mechanism from Basic to Token
 - remove `Returning to this specification` URL from task list
+- add header and footer information for feedback and data requests
 
 ## [release-006] - 2021-04-01
 
