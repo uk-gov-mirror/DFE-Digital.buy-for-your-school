@@ -5,7 +5,9 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog 1.0.0].
 
 ## [Unreleased]
+
 - add header and footer information for feedback and data requests
+- document how to manage live environment variables
 
 - force SSL in production to only accept HTTPS traffic, enable HSTS and secure tower cookies
 
